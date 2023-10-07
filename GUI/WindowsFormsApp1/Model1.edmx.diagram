@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ffcbedd0fe1348a98e8a5f6bfd2b7975" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.ADMIN" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.ADMIN_ACCOUNT" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.CLIENT" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.CLIENT_ACCOUNT" Width="1.5" PointX="10.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.GAME" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.GAME_CATEGORIES" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.GAME_PLATFORMS" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.RENT" Width="1.5" PointX="10.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.SEARCHBYCRITERIA" Width="1.5" PointX="13.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.sysdiagram" Width="1.5" PointX="1.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.UPDATEGAMEDETAIL" Width="1.5" PointX="11.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Games_Rental_SystemModel.VENDOR" Width="1.5" PointX="3.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_ADMIN_AC_A_LOGIN_ADMIN" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_ADMIN_AC_A_SIGNUP_ADMIN" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_GAME_ADD_ADMIN" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_UPDATEGA_REFERENCE_ADMIN" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_CLIENT_A_C_LOGIN_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_CLIENT_A_CSIGNUP_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_RENT_RENT2_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_SEARCHBY_RELATIONS_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_GAME_CAT_REFERENCE_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_GAME_DEVELOPES_VENDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_GAME_PLA_REFERENCE_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_RENT_RENT_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_SEARCHBY_RELATIONS_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_UPDATEGA_REFERENCE_GAME" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.FK_RENT_RENT3_VENDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.BROWSE" ManuallyRouted="false" />
+        <AssociationConnector Association="Games_Rental_SystemModel.RETURN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,41 @@
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminF.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ClientF.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SignUp.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LogIn.resources
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LogIn.resources
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SignUp.resources
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminF.resources
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ClientF.resources
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\sbnr1\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddGame.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UpdateGame.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Renting.resources
+D:\data base\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Return.resources

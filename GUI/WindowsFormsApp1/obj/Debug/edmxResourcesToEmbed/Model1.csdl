@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Games_Rental_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="ADMIN_ID" />
+    </Key>
+    <Property Name="ADMIN_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="A_FIRSTNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="A_LASTNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ADMIN_ACCOUNT" Relationship="Self.FK_ADMIN_AC_A_LOGIN_ADMIN" FromRole="ADMIN" ToRole="ADMIN_ACCOUNT" />
+    <NavigationProperty Name="ADMIN_ACCOUNT1" Relationship="Self.FK_ADMIN_AC_A_SIGNUP_ADMIN" FromRole="ADMIN" ToRole="ADMIN_ACCOUNT" />
+    <NavigationProperty Name="GAMEs" Relationship="Self.FK_GAME_ADD_ADMIN" FromRole="ADMIN" ToRole="GAME" />
+    <NavigationProperty Name="UPDATEGAMEDETAILS" Relationship="Self.FK_UPDATEGA_REFERENCE_ADMIN" FromRole="ADMIN" ToRole="UPDATEGAMEDETAILS" />
+  </EntityType>
+  <EntityType Name="ADMIN_ACCOUNT">
+    <Key>
+      <PropertyRef Name="A_USERNAME" />
+    </Key>
+    <Property Name="A_USERNAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADMIN_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="A_PASSWORD" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="A_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ADMIN" Relationship="Self.FK_ADMIN_AC_A_LOGIN_ADMIN" FromRole="ADMIN_ACCOUNT" ToRole="ADMIN" />
+    <NavigationProperty Name="ADMIN1" Relationship="Self.FK_ADMIN_AC_A_SIGNUP_ADMIN" FromRole="ADMIN_ACCOUNT" ToRole="ADMIN" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="CLIENT_ID" />
+    </Key>
+    <Property Name="CLIENT_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="C_FIRSTNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_LASTNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_AGE" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="C_PNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_CITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_GOV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_STREET" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENT_ACCOUNT" Relationship="Self.FK_CLIENT_A_C_LOGIN_CLIENT" FromRole="CLIENT" ToRole="CLIENT_ACCOUNT" />
+    <NavigationProperty Name="CLIENT_ACCOUNT1" Relationship="Self.FK_CLIENT_A_CSIGNUP_CLIENT" FromRole="CLIENT" ToRole="CLIENT_ACCOUNT" />
+    <NavigationProperty Name="RENTs" Relationship="Self.FK_RENT_RENT2_CLIENT" FromRole="CLIENT" ToRole="RENT" />
+    <NavigationProperty Name="SEARCHBYCRITERIAs" Relationship="Self.FK_SEARCHBY_RELATIONS_CLIENT" FromRole="CLIENT" ToRole="SEARCHBYCRITERIA" />
+    <NavigationProperty Name="GAMEs" Relationship="Self.BROWSE" FromRole="CLIENT" ToRole="GAME" />
+    <NavigationProperty Name="GAMEs1" Relationship="Self.RETURN" FromRole="CLIENT" ToRole="GAME" />
+  </EntityType>
+  <EntityType Name="CLIENT_ACCOUNT">
+    <Key>
+      <PropertyRef Name="C_USERNAME" />
+    </Key>
+    <Property Name="C_USERNAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="C_PASSWORD" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_CLIENT_A_C_LOGIN_CLIENT" FromRole="CLIENT_ACCOUNT" ToRole="CLIENT" />
+    <NavigationProperty Name="CLIENT1" Relationship="Self.FK_CLIENT_A_CSIGNUP_CLIENT" FromRole="CLIENT_ACCOUNT" ToRole="CLIENT" />
+  </EntityType>
+  <EntityType Name="GAME">
+    <Key>
+      <PropertyRef Name="GAME_ID" />
+    </Key>
+    <Property Name="GAME_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="ADMIN_ID" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="G_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YEAR" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="ADDITIONDATE" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ADMIN" Relationship="Self.FK_GAME_ADD_ADMIN" FromRole="GAME" ToRole="ADMIN" />
+    <NavigationProperty Name="GAME_CATEGORIES" Relationship="Self.FK_GAME_CAT_REFERENCE_GAME" FromRole="GAME" ToRole="GAME_CATEGORIES" />
+    <NavigationProperty Name="VENDOR" Relationship="Self.FK_GAME_DEVELOPES_VENDOR" FromRole="GAME" ToRole="VENDOR" />
+    <NavigationProperty Name="GAME_PLATFORMS" Relationship="Self.FK_GAME_PLA_REFERENCE_GAME" FromRole="GAME" ToRole="GAME_PLATFORMS" />
+    <NavigationProperty Name="RENTs" Relationship="Self.FK_RENT_RENT_GAME" FromRole="GAME" ToRole="RENT" />
+    <NavigationProperty Name="SEARCHBYCRITERIAs" Relationship="Self.FK_SEARCHBY_RELATIONS_GAME" FromRole="GAME" ToRole="SEARCHBYCRITERIA" />
+    <NavigationProperty Name="UPDATEGAMEDETAILS" Relationship="Self.FK_UPDATEGA_REFERENCE_GAME" FromRole="GAME" ToRole="UPDATEGAMEDETAILS" />
+    <NavigationProperty Name="CLIENTs" Relationship="Self.BROWSE" FromRole="GAME" ToRole="CLIENT" />
+    <NavigationProperty Name="CLIENTs1" Relationship="Self.RETURN" FromRole="GAME" ToRole="CLIENT" />
+  </EntityType>
+  <EntityType Name="GAME_CATEGORIES">
+    <Key>
+      <PropertyRef Name="CATEGORIES" />
+      <PropertyRef Name="GAME_ID" />
+    </Key>
+    <Property Name="CATEGORIES" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GAME_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <NavigationProperty Name="GAME" Relationship="Self.FK_GAME_CAT_REFERENCE_GAME" FromRole="GAME_CATEGORIES" ToRole="GAME" />
+  </EntityType>
+  <EntityType Name="GAME_PLATFORMS">
+    <Key>
+      <PropertyRef Name="PLATFORMS" />
+      <PropertyRef Name="GAME_ID" />
+    </Key>
+    <Property Name="PLATFORMS" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GAME_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <NavigationProperty Name="GAME" Relationship="Self.FK_GAME_PLA_REFERENCE_GAME" FromRole="GAME_PLATFORMS" ToRole="GAME" />
+  </EntityType>
+  <EntityType Name="RENT">
+    <Key>
+      <PropertyRef Name="GAME_ID" />
+      <PropertyRef Name="CLIENT_ID" />
+      <PropertyRef Name="VENDOR_ID" />
+    </Key>
+    <Property Name="GAME_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="DATEOFRENTING" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_RENT_RENT2_CLIENT" FromRole="RENT" ToRole="CLIENT" />
+    <NavigationProperty Name="GAME" Relationship="Self.FK_RENT_RENT_GAME" FromRole="RENT" ToRole="GAME" />
+    <NavigationProperty Name="VENDOR" Relationship="Self.FK_RENT_RENT3_VENDOR" FromRole="RENT" ToRole="VENDOR" />
+  </EntityType>
+  <EntityType Name="SEARCHBYCRITERIA">
+    <Key>
+      <PropertyRef Name="CLIENT_ID" />
+      <PropertyRef Name="GAME_ID" />
+    </Key>
+    <Property Name="CLIENT_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="GAME_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="GID" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="GYEAR" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="GNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PALTFORM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CATEGORY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_SEARCHBY_RELATIONS_CLIENT" FromRole="SEARCHBYCRITERIA" ToRole="CLIENT" />
+    <NavigationProperty Name="GAME" Relationship="Self.FK_SEARCHBY_RELATIONS_GAME" FromRole="SEARCHBYCRITERIA" ToRole="GAME" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UPDATEGAMEDETAIL">
+    <Key>
+      <PropertyRef Name="ADMIN_ID" />
+      <PropertyRef Name="GAME_ID" />
+    </Key>
+    <Property Name="ADMIN_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="GAME_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="PLATFORM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CATEGORY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="G_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="YEAR" Type="Decimal" Precision="4" Scale="0" />
+    <NavigationProperty Name="ADMIN" Relationship="Self.FK_UPDATEGA_REFERENCE_ADMIN" FromRole="UPDATEGAMEDETAILS" ToRole="ADMIN" />
+    <NavigationProperty Name="GAME" Relationship="Self.FK_UPDATEGA_REFERENCE_GAME" FromRole="UPDATEGAMEDETAILS" ToRole="GAME" />
+  </EntityType>
+  <EntityType Name="VENDOR">
+    <Key>
+      <PropertyRef Name="VENDOR_ID" />
+    </Key>
+    <Property Name="VENDOR_ID" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="V_FIRSTNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="V_LASTNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="V_PNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="V_CITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="V_GOV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="V_STREET" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GAMEs" Relationship="Self.FK_GAME_DEVELOPES_VENDOR" FromRole="VENDOR" ToRole="GAME" />
+    <NavigationProperty Name="RENTs" Relationship="Self.FK_RENT_RENT3_VENDOR" FromRole="VENDOR" ToRole="RENT" />
+  </EntityType>
+  <Association Name="FK_ADMIN_AC_A_LOGIN_ADMIN">
+    <End Role="ADMIN" Type="Self.ADMIN" Multiplicity="1" />
+    <End Role="ADMIN_ACCOUNT" Type="Self.ADMIN_ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADMIN">
+        <PropertyRef Name="ADMIN_ID" />
+      </Principal>
+      <Dependent Role="ADMIN_ACCOUNT">
+        <PropertyRef Name="ADMIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ADMIN_AC_A_SIGNUP_ADMIN">
+    <End Role="ADMIN" Type="Self.ADMIN" Multiplicity="1" />
+    <End Role="ADMIN_ACCOUNT" Type="Self.ADMIN_ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADMIN">
+        <PropertyRef Name="ADMIN_ID" />
+      </Principal>
+      <Dependent Role="ADMIN_ACCOUNT">
+        <PropertyRef Name="ADMIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GAME_ADD_ADMIN">
+    <End Role="ADMIN" Type="Self.ADMIN" Multiplicity="0..1" />
+    <End Role="GAME" Type="Self.GAME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADMIN">
+        <PropertyRef Name="ADMIN_ID" />
+      </Principal>
+      <Dependent Role="GAME">
+        <PropertyRef Name="ADMIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UPDATEGA_REFERENCE_ADMIN">
+    <End Role="ADMIN" Type="Self.ADMIN" Multiplicity="1" />
+    <End Role="UPDATEGAMEDETAILS" Type="Self.UPDATEGAMEDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADMIN">
+        <PropertyRef Name="ADMIN_ID" />
+      </Principal>
+      <Dependent Role="UPDATEGAMEDETAILS">
+        <PropertyRef Name="ADMIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENT_A_C_LOGIN_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="CLIENT_ACCOUNT" Type="Self.CLIENT_ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Principal>
+      <Dependent Role="CLIENT_ACCOUNT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENT_A_CSIGNUP_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="CLIENT_ACCOUNT" Type="Self.CLIENT_ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Principal>
+      <Dependent Role="CLIENT_ACCOUNT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RENT_RENT2_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Principal>
+      <Dependent Role="RENT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEARCHBY_RELATIONS_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="SEARCHBYCRITERIA" Type="Self.SEARCHBYCRITERIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="CLIENT_ID" />
+      </Principal>
+      <Dependent Role="SEARCHBYCRITERIA">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GAME_CAT_REFERENCE_GAME">
+    <End Role="GAME" Type="Self.GAME" Multiplicity="1" />
+    <End Role="GAME_CATEGORIES" Type="Self.GAME_CATEGORIES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GAME">
+        <PropertyRef Name="GAME_ID" />
+      </Principal>
+      <Dependent Role="GAME_CATEGORIES">
+        <PropertyRef Name="GAME_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GAME_DEVELOPES_VENDOR">
+    <End Role="VENDOR" Type="Self.VENDOR" Multiplicity="1" />
+    <End Role="GAME" Type="Self.GAME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENDOR">
+        <PropertyRef Name="VENDOR_ID" />
+      </Principal>
+      <Dependent Role="GAME">
+        <PropertyRef Name="VENDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GAME_PLA_REFERENCE_GAME">
+    <End Role="GAME" Type="Self.GAME" Multiplicity="1" />
+    <End Role="GAME_PLATFORMS" Type="Self.GAME_PLATFORMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GAME">
+        <PropertyRef Name="GAME_ID" />
+      </Principal>
+      <Dependent Role="GAME_PLATFORMS">
+        <PropertyRef Name="GAME_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RENT_RENT_GAME">
+    <End Role="GAME" Type="Self.GAME" Multiplicity="1" />
+    <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GAME">
+        <PropertyRef Name="GAME_ID" />
+      </Principal>
+      <Dependent Role="RENT">
+        <PropertyRef Name="GAME_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEARCHBY_RELATIONS_GAME">
+    <End Role="GAME" Type="Self.GAME" Multiplicity="1" />
+    <End Role="SEARCHBYCRITERIA" Type="Self.SEARCHBYCRITERIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GAME">
+        <PropertyRef Name="GAME_ID" />
+      </Principal>
+      <Dependent Role="SEARCHBYCRITERIA">
+        <PropertyRef Name="GAME_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UPDATEGA_REFERENCE_GAME">
+    <End Role="GAME" Type="Self.GAME" Multiplicity="1" />
+    <End Role="UPDATEGAMEDETAILS" Type="Self.UPDATEGAMEDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GAME">
+        <PropertyRef Name="GAME_ID" />
+      </Principal>
+      <Dependent Role="UPDATEGAMEDETAILS">
+        <PropertyRef Name="GAME_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RENT_RENT3_VENDOR">
+    <End Role="VENDOR" Type="Self.VENDOR" Multiplicity="1" />
+    <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENDOR">
+        <PropertyRef Name="VENDOR_ID" />
+      </Principal>
+      <Dependent Role="RENT">
+        <PropertyRef Name="VENDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BROWSE">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+    <End Role="GAME" Type="Self.GAME" Multiplicity="*" />
+  </Association>
+  <Association Name="RETURN">
+    <End Role="GAME" Type="Self.GAME" Multiplicity="*" />
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Games_Rental_SystemEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+    <EntitySet Name="ADMIN_ACCOUNT" EntityType="Self.ADMIN_ACCOUNT" />
+    <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
+    <EntitySet Name="CLIENT_ACCOUNT" EntityType="Self.CLIENT_ACCOUNT" />
+    <EntitySet Name="GAMEs" EntityType="Self.GAME" />
+    <EntitySet Name="GAME_CATEGORIES" EntityType="Self.GAME_CATEGORIES" />
+    <EntitySet Name="GAME_PLATFORMS" EntityType="Self.GAME_PLATFORMS" />
+    <EntitySet Name="RENTs" EntityType="Self.RENT" />
+    <EntitySet Name="SEARCHBYCRITERIAs" EntityType="Self.SEARCHBYCRITERIA" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UPDATEGAMEDETAILS" EntityType="Self.UPDATEGAMEDETAIL" />
+    <EntitySet Name="VENDORs" EntityType="Self.VENDOR" />
+    <AssociationSet Name="FK_ADMIN_AC_A_LOGIN_ADMIN" Association="Self.FK_ADMIN_AC_A_LOGIN_ADMIN">
+      <End Role="ADMIN" EntitySet="ADMINs" />
+      <End Role="ADMIN_ACCOUNT" EntitySet="ADMIN_ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ADMIN_AC_A_SIGNUP_ADMIN" Association="Self.FK_ADMIN_AC_A_SIGNUP_ADMIN">
+      <End Role="ADMIN" EntitySet="ADMINs" />
+      <End Role="ADMIN_ACCOUNT" EntitySet="ADMIN_ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GAME_ADD_ADMIN" Association="Self.FK_GAME_ADD_ADMIN">
+      <End Role="ADMIN" EntitySet="ADMINs" />
+      <End Role="GAME" EntitySet="GAMEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UPDATEGA_REFERENCE_ADMIN" Association="Self.FK_UPDATEGA_REFERENCE_ADMIN">
+      <End Role="ADMIN" EntitySet="ADMINs" />
+      <End Role="UPDATEGAMEDETAILS" EntitySet="UPDATEGAMEDETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENT_A_C_LOGIN_CLIENT" Association="Self.FK_CLIENT_A_C_LOGIN_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="CLIENT_ACCOUNT" EntitySet="CLIENT_ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENT_A_CSIGNUP_CLIENT" Association="Self.FK_CLIENT_A_CSIGNUP_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="CLIENT_ACCOUNT" EntitySet="CLIENT_ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RENT_RENT2_CLIENT" Association="Self.FK_RENT_RENT2_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="RENT" EntitySet="RENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEARCHBY_RELATIONS_CLIENT" Association="Self.FK_SEARCHBY_RELATIONS_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="SEARCHBYCRITERIA" EntitySet="SEARCHBYCRITERIAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GAME_CAT_REFERENCE_GAME" Association="Self.FK_GAME_CAT_REFERENCE_GAME">
+      <End Role="GAME" EntitySet="GAMEs" />
+      <End Role="GAME_CATEGORIES" EntitySet="GAME_CATEGORIES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GAME_DEVELOPES_VENDOR" Association="Self.FK_GAME_DEVELOPES_VENDOR">
+      <End Role="VENDOR" EntitySet="VENDORs" />
+      <End Role="GAME" EntitySet="GAMEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GAME_PLA_REFERENCE_GAME" Association="Self.FK_GAME_PLA_REFERENCE_GAME">
+      <End Role="GAME" EntitySet="GAMEs" />
+      <End Role="GAME_PLATFORMS" EntitySet="GAME_PLATFORMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RENT_RENT_GAME" Association="Self.FK_RENT_RENT_GAME">
+      <End Role="GAME" EntitySet="GAMEs" />
+      <End Role="RENT" EntitySet="RENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEARCHBY_RELATIONS_GAME" Association="Self.FK_SEARCHBY_RELATIONS_GAME">
+      <End Role="GAME" EntitySet="GAMEs" />
+      <End Role="SEARCHBYCRITERIA" EntitySet="SEARCHBYCRITERIAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UPDATEGA_REFERENCE_GAME" Association="Self.FK_UPDATEGA_REFERENCE_GAME">
+      <End Role="GAME" EntitySet="GAMEs" />
+      <End Role="UPDATEGAMEDETAILS" EntitySet="UPDATEGAMEDETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RENT_RENT3_VENDOR" Association="Self.FK_RENT_RENT3_VENDOR">
+      <End Role="VENDOR" EntitySet="VENDORs" />
+      <End Role="RENT" EntitySet="RENTs" />
+    </AssociationSet>
+    <AssociationSet Name="BROWSE" Association="Self.BROWSE">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="GAME" EntitySet="GAMEs" />
+    </AssociationSet>
+    <AssociationSet Name="RETURN" Association="Self.RETURN">
+      <End Role="GAME" EntitySet="GAMEs" />
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
